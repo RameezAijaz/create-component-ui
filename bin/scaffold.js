@@ -59,7 +59,7 @@ async function scaffold() {
         throw new Error(`${error}`)
     });
 
-    const spinner = ora('Installing dependencies -- it might take a while..').start();
+    const spinner = ora('Installing dependencies -- it may take a while..').start();
 
 
     await initializePackageJson(project_name).catch(error=> {
@@ -69,7 +69,7 @@ async function scaffold() {
         });
         throw new Error(`${error}`)
     });
-    const npmStdout = await installingDependencies(project_name, config);
+    const npmStdout = await installingDependencies(project_name);
     spinner.stopAndPersist({
         text:'Dependencies installed successfully..',
         symbol:"✔"
@@ -124,17 +124,20 @@ function copyFiles(filesToCopy=[], project_name){
         });
 
         https.get(
-            'https://raw.githubusercontent.com/RameezAijaz/simple-chrome-extension/master/.gitignore',
+            'https://raw.githubusercontent.com/RameezAijaz/create-component-ui/master/.gitignore',
             (res) => {
                 res.setEncoding('utf8');
                 let body = '';
                 res.on('data', (data) => {
                     body += data;
                 });
+                res.on('error',()=>{
+                    resolve();
+                });
                 res.on('end', () => {
                     fs.writeFile(`${project_name}/.gitignore`, body, { encoding: 'utf-8' }, (err) => {
                         if (err) {
-                            reject(err);
+                            resolve();
                             return;
                         }
                         resolve();
@@ -180,13 +183,13 @@ function copySourceDirectory(project_name){
     return fs
         .copy(path.join(__dirname, '../src'), `${project_name}/src`);
 }
-function installingDependencies(project_name, config){
+function installingDependencies(project_name){
 
     return new Promise((resolve, reject)=>{
 
         // installing dependencies
-        let devDeps = getDeps(existing_package_json.devDependencies, config),
-            deps = getDeps(existing_package_json.dependencies, config);
+        let devDeps = getDeps(existing_package_json.devDependencies),
+            deps = getDeps(existing_package_json.dependencies);
 
         exec(
             `cd ${project_name} && npm i -D ${devDeps} && npm i -S ${deps}`,
