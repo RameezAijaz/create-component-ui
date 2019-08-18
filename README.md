@@ -1,6 +1,7 @@
 # Create-Component-UI
 Scaffold lightweight UI boilerplate including typescript, webcomponents, lit-element and webpack.
 
+![logo](https://github.com/RameezAijaz/create-component-ui/blob/master/documentation/component-ui-banner.png?raw=true "logo")
 # Usage
 ## With npx
 ```
