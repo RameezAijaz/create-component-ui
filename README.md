@@ -27,4 +27,4 @@ $ create-component-ui
 
 # Result
 
-![logo](./documentation/screenshot.png "logo")
+![logo](https://github.com/RameezAijaz/create-component-ui/blob/master/documentation/screenshot.png?raw=true "logo")
