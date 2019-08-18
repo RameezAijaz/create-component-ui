@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component UI</title>
+    <script src="webcomponents/webcomponents-loader.js"></script>
+</head>
+<body>
+
+<header-elem heading="Component UI" description="Welcome to Component UI !!!"></header-elem>
+<nav-bar-elem links='[{"href":"#/home", "text":"Home", "style":"none"},{"href":"#/about", "text":"About", "style":"none"},{"href":"#/contact", "text":"Contact", "style":"float:right"}]'>
+</nav-bar-elem>
+
+<div class="row">
+    <div class="leftcolumn">
+        <article-elem heading="Typescript"
+                   date="Dec 02, 2018"
+                   subHeading="An article about typescript !!!"
+                   imgSrc="TypeScriptBanner.png"
+                   description="TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language."></article-elem>
+        <article-elem heading="Web Components"
+                   date="Aug 22, 2018"
+                   subHeading="An article about web components !!!"
+                   imgSrc="WebcomponentsBanner.png"
+                   description="Web Components are a set of features that provide a standard component model for the Web allowing for encapsulation and interoperability of individual HTML elements."></article-elem>
+
+       <article-elem heading="LitElement"
+                   date="May 16, 2018"
+                   subHeading="An article about LitElement !!!"
+                   imgSrc="LitElementBanner.png"
+                   description="A simple base class for creating fast, lightweight web components"></article-elem>
+
+        <article-elem heading="Webpack"
+                   date="Feb 10, 2018"
+                   subHeading="An article about webpack !!!"
+                   imgSrc="WebpackBanner.png"
+                   description="Webpack is an open-source JavaScript module bundler. It is a module bundler primarily for JavaScript, but it can transform front-end assets like HTML, CSS, and images if the corresponding plugins are included. Webpack takes modules with dependencies and generates static assets representing those modules."></article-elem>
+    </div>
+    <div class="rightcolumn">
+        <about-elem heading="About Me"
+                    imgSrc="PersonaImg.png"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum."
+                    socialLinks='[{"href":"https://www.npmjs.com/~rameez.aijaz", "text":"Npm"},{"href":"https://github.com/RameezAijaz", "text":"GitHub"},{"href":"https://www.linkedin.com/in/rameez-aijaz/", "text":"LinkedIn"}]'>
+
+        </about-elem>
+    </div>
+</div>
+</body>
+</html>
