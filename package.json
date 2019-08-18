@@ -23,7 +23,9 @@
     "lit-element",
     "lit-html",
     "scaffold",
-    "boilerplate"
+    "boilerplate",
+    "lightweight",
+    "lit-html"
   ],
   "author": "Syed Rameez Aijaz <ramez.aijaz@gmail.com>",
   "license": "ISC",
