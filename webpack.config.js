@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, argv)=>({
     mode: 'development',
@@ -29,7 +30,17 @@ module.exports = (env, argv)=>({
                 to: './',
                 flatten: true
             }
-        ])
+        ]),
+
+        new TerserPlugin({
+            parallel: true,
+            terserOptions: {
+                ecma: 6,
+                output: {
+                    comments: false
+                }
+            }
+        })
     ],
     output: {
         filename: '[name].bundle.js',
@@ -39,7 +50,14 @@ module.exports = (env, argv)=>({
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: [
+                    {
+                        loader: 'minify-lit-html-loader',
+                    },
+                    {
+                        loader: 'ts-loader'
+                    }
+                ],
                 exclude: /node_modules/
             },
             {
