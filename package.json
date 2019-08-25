@@ -1,6 +1,6 @@
 {
   "name": "create-component-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "scaffold ui application with typescript, webcomponents, lit-element and webpack",
   "main": "index.js",
   "scripts": {
