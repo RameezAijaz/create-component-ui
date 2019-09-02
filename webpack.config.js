@@ -50,14 +50,16 @@ module.exports = (env, argv)=>({
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [
+                use: argv.mode === 'production'? [
                     {
                         loader: 'minify-lit-html-loader',
                     },
                     {
-                        loader: 'ts-loader'
+                        loader: 'ts-loader',
                     }
-                ],
+                ]:[{
+                    loader: 'ts-loader',
+                }],
                 exclude: /node_modules/
             },
             {
