@@ -25,7 +25,7 @@ const existing_package_json = require('../package.json');
 
 const scripts = `"build": "webpack --mode production",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open -d",
     "test": "echo \\"Error: no test specified\\" && exit 1"`;
 
 
