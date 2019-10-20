@@ -77,6 +77,7 @@ async function scaffold() {
     console.log(chalk.cyan(npmStdout));
 
     console.log(chalk.green(`All done!\nYour app is now started into ${project_name} folder.\nHappy Coding!`));
+    process.exit();
 
 }
 
